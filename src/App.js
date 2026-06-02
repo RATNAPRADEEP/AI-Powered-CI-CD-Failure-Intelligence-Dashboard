@@ -578,7 +578,7 @@ function App() {
     	"Correlation",
     	"Root Cause",
     	"Remediation",
-    	"Recovered"
+    	"Awaiting Recovery"
     	].map((step, index) => (
       	<div key={step} className="step-wrapper">
 
