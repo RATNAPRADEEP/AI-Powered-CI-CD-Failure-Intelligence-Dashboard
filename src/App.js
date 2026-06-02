@@ -567,13 +567,18 @@ function App() {
 	  </div>
 
   	<div className="workflow-column">
+	
+	<h3 className="workflow-title">
+    	Investigation Pipeline
+  	</h3>
+
     	{[
-      	"Alert",
-      	"Detect",
-      	"Analyze",
-      	"RCA",
-      	"Fix",
-      	"Healthy"
+      	    "Failure",
+    	"Telemetry",
+    	"Correlation",
+    	"Root Cause",
+    	"Remediation",
+    	"Recovered"
     	].map((step, index) => (
       	<div key={step} className="step-wrapper">
 
