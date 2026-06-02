@@ -522,9 +522,11 @@ function App() {
 
       <div className="investigation-card">
 
-        <h1>Investigation Workflow</h1>
+  	<div className="investigation-left">
 
-        <div className="incident-block">
+    	<h1>Investigation Workflow</h1>
+
+    	<div className="incident-block">
           <span>FAILURE EVENT</span>
           <h2>{currentWorkflow.event}</h2>
         </div>
@@ -562,8 +564,41 @@ function App() {
             {currentWorkflow.approval}
           </p>
         </div>
+	  </div>
 
-      </div>
+  	<div className="workflow-column">
+    	{[
+      	"Alert",
+      	"Detect",
+      	"Analyze",
+      	"RCA",
+      	"Fix",
+      	"Healthy"
+    	].map((step, index) => (
+      	<div key={step} className="step-wrapper">
+
+        	<div
+          	className={`step-node ${
+            	index < 5 ? "completed" : "active"
+          	}`}
+        	>
+          	{index < 5 ? "✓" : ""}
+        	</div>
+
+        	<span>{step}</span>
+
+        	{index !== 5 && (
+          	<div className="vertical-line">
+            	<div className="flow-dot"></div>
+          	</div>
+        	)}
+
+      	</div>
+   	 ))}
+  	</div>
+
+	</div>
+	
 
       <div className="workflow-grid">
 
